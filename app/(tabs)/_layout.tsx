@@ -4,7 +4,13 @@ import { Tabs } from 'expo-router'
 import React from 'react'
 import { Image, ImageBackground, Text, View } from 'react-native'
 
-const TabIcon = ({focused,title,icon}) => {
+interface TabIconProps {
+  focused: boolean;
+  title: string;
+  icon: any; 
+}
+
+const TabIcon = ({ focused, title, icon }: TabIconProps) => {
   if(focused){  
   return (
     <ImageBackground
@@ -36,11 +42,11 @@ const _layout = () => {
           justifyContent:'center',
           alignItems:'center'
         },
-        tabBarStyle:{
+        tabBarStyle:{ //bottom purple tab bar
           backgroundColor:'#0f0D23',
           borderRadius:50,
           marginHorizontal:20,
-          marginBottom:20,
+          marginBottom:30,
           height:50,
           position:'absolute',
           overflow:'hidden',
